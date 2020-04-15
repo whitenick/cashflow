@@ -1,6 +1,5 @@
 from pymongo import MongoClient
 from pymongo import database
-import numpy as np
 
 class BaseRepository:
     client: MongoClient
@@ -20,4 +19,10 @@ class BaseRepository:
         for doc in all_docs:
             results.append(doc)
         return results
+
+    def create(self, stock):
+        self.collection.insert_one(stock)
+
+    def edit(self, stock):
+        self.collection.update_one({'Ticker' : stock.ticker}, stock)
 

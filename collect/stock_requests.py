@@ -9,6 +9,4 @@ response = requests.request('GET', base + 'financials/cash-flow-statement/{}?per
 jsonBody = response.json()
 print (json.dumps(jsonBody))
 
-def create_app():
-    for i in range(10):
-        print ("Hello")
+def ():
